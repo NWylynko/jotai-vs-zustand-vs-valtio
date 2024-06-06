@@ -27,9 +27,9 @@ function Display() {
   const snap = useSnapshot(state);
 
   return (
-    <button className="border rounded-lg py-2" type="button" disabled>
+    <span className="border rounded-lg py-2 text-center">
       count is {snap.count}
-    </button>
+    </span>
   );
 }
 

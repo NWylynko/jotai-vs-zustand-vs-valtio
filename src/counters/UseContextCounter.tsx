@@ -51,9 +51,7 @@ function Display() {
   const { count } = useCounter();
 
   return (
-    <button className="border rounded-lg py-2" type="button" disabled>
-      count is {count}
-    </button>
+    <span className="border rounded-lg py-2 text-center">count is {count}</span>
   );
 }
 

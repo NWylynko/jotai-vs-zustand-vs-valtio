@@ -25,9 +25,9 @@ export function UseStateCounter() {
 
 function Display(props: { count: number }) {
   return (
-    <button className="border rounded-lg py-2" type="button" disabled>
+    <span className="border rounded-lg py-2 text-center">
       count is {props.count}
-    </button>
+    </span>
   );
 }
 

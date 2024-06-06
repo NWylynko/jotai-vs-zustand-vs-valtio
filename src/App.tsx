@@ -6,27 +6,77 @@ import { ZustandCounter } from "./counters/ZustandCounter";
 
 export default function App() {
   return (
-    <main className="flex flex-col md:flex-row gap-4 justify-center items-center min-h-svh w-svw">
-      <div className="p-4 flex flex-col gap-4">
-        <span>Jotai implementation</span>
-        <JotaiCounter />
-      </div>
-      <div className="p-4 flex flex-col gap-4">
-        <span>Zustand implementation</span>
-        <ZustandCounter />
-      </div>
-      <div className="p-4 flex flex-col gap-4">
-        <span>Valtio implementation</span>
-        <ValtioCounter />
-      </div>
-      <div className="p-4 flex flex-col gap-4">
-        <span>UseState implementation</span>
-        <UseStateCounter />
-      </div>
-      <div className="p-4 flex flex-col gap-4">
-        <span>UseContext implementation</span>
-        <UseContextCounter />
-      </div>
-    </main>
+    <div className="flex flex-col gap-8 w-full min-h-svh justify-center items-center">
+      <main className="flex flex-col md:flex-row gap-4 items-center justify-center w-full">
+        <div className="p-4 flex flex-col gap-4">
+          <span>
+            <a
+              className="text-blue-300 underline:hover"
+              href="https://npmjs.com/package/jotai"
+            >
+              Jotai
+            </a>{" "}
+            implementation
+          </span>
+          <JotaiCounter />
+        </div>
+        <div className="p-4 flex flex-col gap-4">
+          <span>
+            <a
+              className="text-blue-300 underline:hover"
+              href="https://npmjs.com/package/zustand"
+            >
+              Zustand
+            </a>{" "}
+            implementation
+          </span>
+          <ZustandCounter />
+        </div>
+        <div className="p-4 flex flex-col gap-4">
+          <span>
+            <a
+              className="text-blue-300 underline:hover"
+              href="https://npmjs.com/package/valtio"
+            >
+              Valtio
+            </a>{" "}
+            implementation
+          </span>
+          <ValtioCounter />
+        </div>
+        <div className="p-4 flex flex-col gap-4">
+          <span>
+            <a
+              className="text-blue-300 underline:hover"
+              href="https://react.dev/reference/react/useState"
+            >
+              Use State
+            </a>{" "}
+            implementation
+          </span>
+          <UseStateCounter />
+        </div>
+        <div className="p-4 flex flex-col gap-4">
+          <span>
+            <a
+              className="text-blue-300 underline:hover"
+              href="https://react.dev/reference/react/useContext"
+            >
+              Use Context
+            </a>{" "}
+            implementation
+          </span>
+          <UseContextCounter />
+        </div>
+      </main>
+      <footer className="flex flex-col items-center justify-center w-full">
+        <a
+          className="text-blue-300 underline:hover"
+          href="https://github.com/NWylynko/jotai-vs-zustand-vs-valtio"
+        >
+          Repo here
+        </a>
+      </footer>
+    </div>
   );
 }

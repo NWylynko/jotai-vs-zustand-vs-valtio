@@ -15,30 +15,54 @@ export function UseStateCounter() {
 
   return (
     <>
-      <button className="border rounded-lg py-2" type="button" disabled>
-        count is {count}
-      </button>
-      <button
-        className="border rounded-lg py-2 hover:scale-105 active:scale-95 transition-transform"
-        type="button"
-        onClick={increment}
-      >
-        Increment
-      </button>
-      <button
-        className="border rounded-lg py-2 hover:scale-105 active:scale-95 transition-transform"
-        type="button"
-        onClick={decrement}
-      >
-        Decrement
-      </button>
-      <button
-        className="border rounded-lg py-2 hover:scale-105 active:scale-95 transition-transform"
-        type="button"
-        onClick={reset}
-      >
-        Reset
-      </button>
+      <Display count={count} />
+      <Increment onIncrement={increment} />
+      <Decrement onDecrement={decrement} />
+      <Reset onReset={reset} />
     </>
+  );
+}
+
+function Display(props: { count: number }) {
+  return (
+    <button className="border rounded-lg py-2" type="button" disabled>
+      count is {props.count}
+    </button>
+  );
+}
+
+function Increment(props: { onIncrement: () => void }) {
+  return (
+    <button
+      className="border rounded-lg py-2 hover:scale-105 active:scale-95 transition-transform"
+      type="button"
+      onClick={props.onIncrement}
+    >
+      Increment
+    </button>
+  );
+}
+
+function Decrement(props: { onDecrement: () => void }) {
+  return (
+    <button
+      className="border rounded-lg py-2 hover:scale-105 active:scale-95 transition-transform"
+      type="button"
+      onClick={props.onDecrement}
+    >
+      Decrement
+    </button>
+  );
+}
+
+function Reset(props: { onReset: () => void }) {
+  return (
+    <button
+      className="border rounded-lg py-2 hover:scale-105 active:scale-95 transition-transform"
+      type="button"
+      onClick={props.onReset}
+    >
+      Reset
+    </button>
   );
 }

@@ -16,37 +16,64 @@ const useStore = create<Store>()((set) => ({
 }));
 
 export function ZustandCounter() {
+  return (
+    <>
+      <Display />
+      <Increment />
+      <Decrement />
+      <Reset />
+    </>
+  );
+}
+
+function Display() {
   const count = useStore((state) => state.count);
+
+  return (
+    <button className="border rounded-lg py-2" type="button" disabled>
+      count is {count}
+    </button>
+  );
+}
+
+function Increment() {
   const increment = useStore((state) => state.increment);
+
+  return (
+    <button
+      className="border rounded-lg py-2 hover:scale-105 active:scale-95 transition-transform"
+      type="button"
+      onClick={increment}
+    >
+      Increment
+    </button>
+  );
+}
+
+function Decrement() {
   const decrement = useStore((state) => state.decrement);
+
+  return (
+    <button
+      className="border rounded-lg py-2 hover:scale-105 active:scale-95 transition-transform"
+      type="button"
+      onClick={decrement}
+    >
+      Decrement
+    </button>
+  );
+}
+
+function Reset() {
   const reset = useStore((state) => state.reset);
 
   return (
-    <>
-      <button className="border rounded-lg py-2" type="button" disabled>
-        count is {count}
-      </button>
-      <button
-        className="border rounded-lg py-2 hover:scale-105 active:scale-95 transition-transform"
-        type="button"
-        onClick={increment}
-      >
-        Increment
-      </button>
-      <button
-        className="border rounded-lg py-2 hover:scale-105 active:scale-95 transition-transform"
-        type="button"
-        onClick={decrement}
-      >
-        Decrement
-      </button>
-      <button
-        className="border rounded-lg py-2 hover:scale-105 active:scale-95 transition-transform"
-        type="button"
-        onClick={reset}
-      >
-        Reset
-      </button>
-    </>
+    <button
+      className="border rounded-lg py-2 hover:scale-105 active:scale-95 transition-transform"
+      type="button"
+      onClick={reset}
+    >
+      Reset
+    </button>
   );
 }

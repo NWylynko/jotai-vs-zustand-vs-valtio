@@ -13,34 +13,58 @@ const reset = () => {
 };
 
 export function ValtioCounter() {
+  return (
+    <>
+      <Display />
+      <Increment />
+      <Decrement />
+      <Reset />
+    </>
+  );
+}
+
+function Display() {
   const snap = useSnapshot(state);
 
   return (
-    <>
-      <button className="border rounded-lg py-2" type="button" disabled>
-        count is {snap.count}
-      </button>
-      <button
-        className="border rounded-lg py-2 hover:scale-105 active:scale-95 transition-transform"
-        type="button"
-        onClick={increment}
-      >
-        Increment
-      </button>
-      <button
-        className="border rounded-lg py-2 hover:scale-105 active:scale-95 transition-transform"
-        type="button"
-        onClick={decrement}
-      >
-        Decrement
-      </button>
-      <button
-        className="border rounded-lg py-2 hover:scale-105 active:scale-95 transition-transform"
-        type="button"
-        onClick={reset}
-      >
-        Reset
-      </button>
-    </>
+    <button className="border rounded-lg py-2" type="button" disabled>
+      count is {snap.count}
+    </button>
+  );
+}
+
+function Increment() {
+  return (
+    <button
+      className="border rounded-lg py-2 hover:scale-105 active:scale-95 transition-transform"
+      type="button"
+      onClick={increment}
+    >
+      Increment
+    </button>
+  );
+}
+
+function Decrement() {
+  return (
+    <button
+      className="border rounded-lg py-2 hover:scale-105 active:scale-95 transition-transform"
+      type="button"
+      onClick={decrement}
+    >
+      Decrement
+    </button>
+  );
+}
+
+function Reset() {
+  return (
+    <button
+      className="border rounded-lg py-2 hover:scale-105 active:scale-95 transition-transform"
+      type="button"
+      onClick={reset}
+    >
+      Reset
+    </button>
   );
 }

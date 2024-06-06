@@ -1,4 +1,5 @@
 import { JotaiCounter } from "./counters/JotaiCounter";
+import { UseContextCounter } from "./counters/UseContextCounter";
 import { UseStateCounter } from "./counters/UseStateCounter";
 import { ValtioCounter } from "./counters/ValtioCounter";
 import { ZustandCounter } from "./counters/ZustandCounter";
@@ -21,6 +22,10 @@ export default function App() {
       <div className="p-4 flex flex-col gap-4">
         <span>UseState implementation</span>
         <UseStateCounter />
+      </div>
+      <div className="p-4 flex flex-col gap-4">
+        <span>UseContext implementation</span>
+        <UseContextCounter />
       </div>
     </main>
   );
